@@ -82,7 +82,10 @@ echo ""
 # Create backup
 print_info "Creating backup..."
 
-if tar -czf "$BACKUP_PATH" -C "$(dirname "$SOURCE_DIR")" "$(basename "$SOURCE_DIR")"; then
+SOURCE_PARENT=$(dirname "$SOURCE_DIR")
+SOURCE_BASENAME=$(basename "$SOURCE_DIR")
+
+if tar -czf "$BACKUP_PATH" -C "$SOURCE_PARENT" "$SOURCE_BASENAME"; then
     # Get backup file size
     if [ -f "$BACKUP_PATH" ]; then
         BACKUP_SIZE=$(du -h "$BACKUP_PATH" | cut -f1)

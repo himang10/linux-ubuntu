@@ -71,6 +71,7 @@ fi
 # Default Gateway
 print_header "Default Gateway"
 
+gateway=""
 if command -v ip >/dev/null 2>&1; then
     gateway=$(ip route | grep default | awk '{print $3}' | head -1)
     if [ -n "$gateway" ]; then
@@ -79,7 +80,10 @@ if command -v ip >/dev/null 2>&1; then
         echo "No default gateway found"
     fi
 elif command -v route >/dev/null 2>&1; then
-    route -n | grep "^0.0.0.0" | awk '{print "Gateway: " $2}'
+    gateway=$(route -n | grep "^0.0.0.0" | awk '{print $2}' | head -1)
+    if [ -n "$gateway" ]; then
+        print_info "Gateway" "$gateway"
+    fi
 fi
 
 # DNS Configuration

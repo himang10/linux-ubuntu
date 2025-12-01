@@ -40,7 +40,7 @@ echo ""
 alert_found=0
 
 # Get disk usage information and check thresholds
-tmpfile="/tmp/disk_usage_$$"
+tmpfile=$(mktemp)
 df -h > "$tmpfile"
 
 while read -r line; do
