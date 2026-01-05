@@ -6,7 +6,7 @@
 
 str1="apple"
 str2="banana"
-empty=""
+#empty=""
 
 echo "=== 문자열 비교 실습 시작 ==="
 echo "str1 = $str1"

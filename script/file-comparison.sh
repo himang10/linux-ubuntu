@@ -27,6 +27,14 @@ echo "[ -e sample.txt ] → 파일 존재?"
 [ -e sample.txt ] && echo "YES (존재함)" || echo "NO (없음)"
 echo
 
+echo "[ -e /etc ] → 파일 존재?"
+[ -e /etc ] && echo "YES (존재함)" || echo "NO (없음)"
+echo
+
+echo "[ -e /etc/null ] → 파일 존재?"
+[ -e /etc/null ] && echo "YES (존재함)" || echo "NO (없음)"
+echo
+
 ############################################################
 # -f : 일반 파일인가?
 ############################################################
@@ -35,6 +43,14 @@ echo "[ -f sample.txt ] → 일반 파일?"
 
 echo "[ -f sample.d ] → 일반 파일?"
 [ -f sample.d ] && echo "YES" || echo "NO"
+echo
+
+echo "[ -e /etc ] → 파일 존재?"
+[ -f /etc ] && echo "YES (존재함)" || echo "NO (없음)"
+echo
+
+echo "[ -e /etc/null ] → 파일 존재?"
+[ -f /etc/null ] && echo "YES (존재함)" || echo "NO (없음)"
 echo
 
 ############################################################
