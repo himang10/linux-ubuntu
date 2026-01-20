@@ -55,19 +55,19 @@ echo "=== 복합 대입 연산자 ==="
 x=10
 echo "초기 x = $x"
 
-x+=5
+((x+=5))
 echo "x+=5   → $x"
 
-x-=3
+((x-=3))
 echo "x-=3   → $x"
 
-x*=2
+((x*=2))
 echo "x*=2   → $x"
 
-x/=4
+((x/=4))
 echo "x/=4   → $x"
 
-x%=3
+((x%=3))
 echo "x%=3   → $x"
 echo
 
@@ -77,7 +77,7 @@ echo
 ###############################################
 echo "=== for test ==="
 
-count=0
+declare -i count=0
 echo "루프에서 count 증가시키기"
 
 for i in 1 2 3 4 5; do
